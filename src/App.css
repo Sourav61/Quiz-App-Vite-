@@ -1,30 +1,50 @@
 .App {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 
-.form {
+.form,
+.quiz {
   height: 70vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   display: flex;
   background-color: aquamarine;
+  color: white;
   width: 37%;
   margin: auto;
   border-radius: 10px;
   padding: 20px;
 }
 
-.startBtn,
-.inputName {
+.form button,
+.options button,
+.startBtn {
   display: block;
   margin: 0px auto 5px;
   width: 50%;
   height: 8%;
   border-radius: 5px;
-
   font-size: medium;
   font-weight: 600;
+}
+
+.testBtn:focus {
+  border: 2px solid red;
+}
+
+.options {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputLabel {
@@ -38,7 +58,7 @@
 }
 
 .startBtn {
-  height: inherit;
+  /* height: inherit; */
   cursor: grabbing;
 }
 

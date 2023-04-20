@@ -4,17 +4,20 @@ import Home from './components/home';
 import Quiz from './components/quiz';
 import Result from './components/result';
 import './App.css'
+import { QuizContext } from "./helper/context";
 
 function App() {
+  const [gameState, setGameState] = useState("menu");
+  const [score, setScore] = useState(0);
+
   return (
     <div className='App'>
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/result" element={<Result />} />
-        </Routes>
-      </Router>
+      <h1>Quiz App</h1>
+      <QuizContext.Provider value={{ setGameState, score, setScore }}>
+        {gameState === "menu" && <Home />}
+        {gameState === "quiz" && <Quiz />}
+        {gameState === "result" && <Result />}
+      </QuizContext.Provider>
     </div>
   )
 }
